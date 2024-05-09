@@ -1,0 +1,13 @@
+﻿@{
+    System.Reflection.Assembly[] additionalAssemblies = new[]
+    {
+        typeof(Components.Pages.Home).Assembly,
+    };
+}
+
+<Router AppAssembly="@typeof(MauiProgram).Assembly" AdditionalAssemblies="additionalAssemblies">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+</Router>
